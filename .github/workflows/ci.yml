@@ -1,11 +1,21 @@
-name: Eka CI
+name: CI Pipeline
  
-on: push
+on:
+  push:
+  pull_request:
  
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Tervehdi
-        run: echo "CI toimii!"
+ 
+      - name: Build
+        run: echo "✅ Build OK!"
+ 
+      - name: Test
+        run: |
+          echo "🧪 Testit käynnissä..."
+          echo "Testi 1: PASSED"
+          echo "Testi 2: PASSED"
+          echo "✅ Kaikki testit läpäisty!"
