@@ -8,11 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Tarkista tiedostot
-        run: |
-          ls -la
-          cat Dockerfile
-          cat index.html
- 
       - name: Build Docker image
-        run: docker build -t myapp . --no-cache
+        run: docker build -t myapp . 
+        env:
+          DOCKER_BUILDKIT: 1
