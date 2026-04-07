@@ -9,7 +9,10 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Tarkista tiedostot
-        run: ls -la
+        run: |
+          ls -la
+          cat Dockerfile
+          cat index.html
  
       - name: Build Docker image
-        run: docker build -t myapp .
+        run: docker build -t myapp . --no-cache
