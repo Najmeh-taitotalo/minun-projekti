@@ -10,5 +10,4 @@ jobs:
       
       - name: Build Docker image
         run: docker build -t myapp . 
-        env:
-          DOCKER_BUILDKIT: 1
+        timeout-minutes: 10
